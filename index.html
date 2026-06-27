@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Треска с Варен Картоф и Броколи</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F8F4FA;--oat:#DDD0EC;--mid:#8855BB;--dark:#42186A;--text:#280A40;--muted:#7040A0;--glow:rgba(136,85,187,.3);--pill-border:rgba(136,85,187,.45);--badge-bg:#F0E8FA;--badge-border:#CCB0E8}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);font-family:'Inter',sans-serif;color:var(--text);line-height:1.6}
+.hero{background:var(--dark);color:var(--cream);padding:52px 24px 44px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 55% 30%,var(--glow),transparent 65%);pointer-events:none}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin-bottom:14px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4.5vw,2.8rem);line-height:1.15;max-width:520px;margin:0 auto 14px}
+.hero-sub{font-size:14px;color:var(--oat);max-width:420px;margin:0 auto 28px;font-weight:300}
+.pills{display:flex;justify-content:center;flex-wrap:wrap;gap:9px}
+.pill{background:rgba(255,255,255,.1);border:1px solid var(--pill-border);border-radius:100px;padding:6px 16px;font-size:13px;color:var(--cream);display:flex;gap:6px;align-items:center}
+.pill span{color:var(--mid);font-weight:700;font-size:14px}
+.day-badge{background:var(--badge-bg);border-bottom:1px solid var(--badge-border);padding:10px 20px;text-align:center;font-size:12px;color:var(--dark);letter-spacing:.05em;font-weight:500}
+.srv-bar{background:var(--oat);border-bottom:1px solid var(--badge-border);padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:14px}
+.srv-label{font-size:13px;color:var(--muted);font-weight:500}
+.srv-ctrl{display:flex;align-items:center;gap:12px}
+.srv-btn{width:30px;height:30px;background:var(--dark);color:var(--cream);border:none;border-radius:50%;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:opacity .15s}
+.srv-btn:hover{opacity:.8}
+#srv-n{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--dark);min-width:22px;text-align:center}
+.wrap{max-width:740px;margin:0 auto;padding:0 18px}
+.sec{padding:30px 0 22px;border-bottom:1px solid var(--oat)}
+.sec:last-child{border-bottom:none}
+.sec-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--dark);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.sec-title::after{content:'';flex:1;height:1px;background:var(--oat)}
+.ing-list{list-style:none}
+.ing-item{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--oat);font-size:14px}
+.ing-item:last-child{border-bottom:none}
+.ing-amt{font-weight:600;color:var(--dark);white-space:nowrap;margin-left:14px}
+.steps{list-style:none}
+.step{display:grid;grid-template-columns:36px 1fr;gap:0 13px;padding:13px 0;border-bottom:1px solid var(--oat)}
+.step:last-child{border-bottom:none}
+.step-n{width:36px;height:36px;background:var(--dark);color:var(--cream);border-radius:50%;font-family:'Playfair Display',serif;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-title{font-weight:600;font-size:13px;color:var(--dark);margin-bottom:3px}
+.step-text{font-size:13px;line-height:1.65}
+.timer{display:inline-flex;align-items:center;gap:4px;margin-top:6px;background:var(--oat);border-radius:100px;padding:4px 11px;font-size:12px;font-weight:600;color:var(--dark);cursor:pointer;border:1px solid var(--badge-border);user-select:none;transition:background .15s}
+.timer:hover{background:var(--mid);color:#fff;border-color:var(--mid)}
+.timer.running{background:#4A7C59;color:#fff;border-color:#4A7C59}
+.timer.done{background:#C0392B;color:#fff;border-color:#C0392B}
+.note-box{background:#fff;border:1px solid var(--oat);border-left:3px solid var(--mid);border-radius:0 7px 7px 0;padding:13px 15px;font-size:13px;line-height:1.6;margin-top:10px}
+.note-box strong{color:var(--dark);display:block;margin-bottom:2px;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+footer{text-align:center;padding:26px 20px;font-size:11px;color:var(--muted)}
+@media(max-width:460px){.hero{padding:34px 14px 30px}}
+
+</style>
+</head>
+<body>
+<header class="hero">
+  <p class="eyebrow">Хранене 4 · Вечеря · Вариант Б</p>
+  <h1>Треска с Варен Картоф и Броколи</h1>
+  <p class="hero-sub">Бяла риба вместо птиче месо — по-лека на храносмилане, идеална за вечер на почивен ден</p>
+  <div class="pills"><div class="pill">🔥 <span>~410</span> kcal</div><div class="pill">💪 <span>46g</span> протеин</div><div class="pill">🌾 <span>33g</span> въглехидрати</div><div class="pill">🥑 <span>12g</span> мазнини</div></div>
+</header>
+<div class="day-badge">🛌 ПОЧИВЕН ДЕН &nbsp;·&nbsp; Хранене 4 от 4 · 46P / 33C / 12F</div>
+<div class="srv-bar">
+  <span class="srv-label">Порции:</span>
+  <div class="srv-ctrl">
+    <button class="srv-btn" onclick="chg(-1)">−</button>
+    <div id="srv-n">1</div>
+    <button class="srv-btn" onclick="chg(1)">+</button>
+  </div>
+</div>
+<main class="wrap">
+  <section class="sec">
+    <h2 class="sec-title">Съставки</h2>
+    <ul class="ing-list" id="ing"></ul>
+  </section>
+  <section class="sec">
+    <h2 class="sec-title">Приготвяне</h2>
+    <div class="steps"><div class="step"><div class="step-n">1</div><div><div class="step-title">Картоф и броколи</div><div class="step-text">Извари картофа в подсолена вода ~15 мин. Изпари броколите на пара 6 мин.</div><div class="timer" onclick="startT(this,900)">⏱ 15 мин</div></div></div><div class="step"><div class="step-n">2</div><div><div class="step-title">Изпичане на рибата</div><div class="step-text">Загрей зехтина в тиган. Добави подправките. Постави рибата и печи 3 мин от всяка страна до готовност.</div><div class="timer" onclick="startT(this,360)">⏱ 6 мин</div></div></div><div class="step"><div class="step-n">3</div><div><div class="step-title">Сервиране</div><div class="step-text">Полей рибата с лимонов сок. Сервирай с картофа и броколите.</div></div></div></div>
+  </section>
+  <section class="sec">
+    <h2 class="sec-title">Бележки</h2>
+    <div class="note-box"><strong>Треска/мерлуза</strong>Сред най-постните риби (~0.5–1g мазнини/100g). 200g готово = ~245g сурово.</div><div class="note-box"><strong>Картоф</strong>По-висок GI от сладкия картоф. Замени с 100g варен сладък картоф за по-нисък GI при нужда.</div><div class="note-box"><strong>Зехтин</strong>10ml зехтин = ~9g мазнини — по-висок принос от другите вечерни рецепти. Може да намалиш на 7ml.</div>
+  </section>
+</main>
+<footer>Почивен ден · Хранене 4Б · Треска с Картоф и Броколи · 465 kcal</footer>
+<script>
+const ings=[
+  {n:'Треска или мерлуза (готово тегло)',b:200,u:'g'},
+  {n:'Варен картоф',b:150,u:'g'},
+  {n:'Броколи',b:200,u:'g'},
+  {n:'Зехтин',b:10,u:'ml'},
+  {n:'Лимонов сок',b:10,u:'ml'},
+  {n:'Чесън, паприка, сол, пипер',b:1,u:'щипка'},
+];
+
+let srv=1;
+function fmt(n){const r=Math.round(n*10)/10;return r%1===0?r:r.toFixed(1)}
+function render(){
+  const ul=document.getElementById('ing');
+  if(!ul)return;
+  ul.innerHTML=ings.map(i=>{
+    const s=i.b*srv;
+    let d;
+    if(i.u==='щипка') d=srv<=1?'1 щипка':`${srv} щипки`;
+    else if(i.u==='бр') d=`${fmt(s)} бр`;
+    else d=`${fmt(s)} ${i.u}`;
+    return`<li class="ing-item"><span>${i.n}</span><span class="ing-amt">${d}</span></li>`;
+  }).join('');
+}
+function chg(d){srv=Math.max(1,Math.min(20,srv+d));document.getElementById('srv-n').textContent=srv;render()}
+const T=new Map();
+function startT(el,tot){
+  if(T.has(el)){clearInterval(T.get(el));T.delete(el);el.textContent=`⏱ ${ft(tot)}`;el.className='timer';return}
+  let r=tot;el.classList.add('running');
+  const id=setInterval(()=>{r--;
+    if(r<=0){clearInterval(id);T.delete(el);el.textContent='✓ Готово!';el.className='timer done';setTimeout(()=>{el.textContent=`⏱ ${ft(tot)}`;el.className='timer'},3000)}
+    else el.textContent=`⏸ ${ft(r)}`;
+  },1000);
+  T.set(el,id);el.textContent=`⏸ ${ft(r)}`;
+}
+function ft(s){const m=Math.floor(s/60),sc=s%60;return m>0?`${m}:${String(sc).padStart(2,'0')} мин`:`${sc} сек`}
+render();
+
+</script>
+</body>
+</html>
